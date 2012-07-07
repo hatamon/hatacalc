@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="0dp"
+	android:layout_weight="2"
+	android:orientation="vertical"
+    android:layout_gravity="center"
+	>
+	<LinearLayout style="@style/Row">
+		<EditText
+			style="@style/EditText"
+			android:hint="@string/AnswerHint"
+			android:id="@+id/EditTextAnswer"
+			android:editable="false"
+			android:layout_weight="1.5"
+		/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton
+			style="@style/ButtonFunc3"
+			android:id="@+id/ButtonChange"
+			android:text="@string/Change"
+			android:layout_weight="8.5"
+		/>
+	</LinearLayout>
+	<LinearLayout style="@style/Row">
+		<EditText
+			style="@style/EditText"
+			android:hint="@string/ExpressionHint"
+			android:id="@+id/EditTextExpression"
+			android:layout_weight="1.5"
+			android:editable="true"
+		/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton
+			style="@style/ButtonClear"
+			android:id="@+id/ButtonClear"
+			android:text="@string/Clear"
+			android:layout_weight="8.5"
+		/>
+	</LinearLayout>
+</LinearLayout>

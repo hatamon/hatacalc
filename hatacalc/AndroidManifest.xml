@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="jp.hatamonkensetsu.software.android.Hatacalc" android:versionName="1.9.2" android:versionCode="14">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="false" android:name="HatacalcApp">
+        <activity android:name=".Hatacalc"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="FuncListActivity"></activity>
+        <activity android:name="VarListActivity"></activity>
+
+    </application>
+    <uses-sdk android:minSdkVersion="4"/>
+
+</manifest> 

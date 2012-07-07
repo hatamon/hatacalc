@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/Panel"
+	>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonLParen" android:text="@string/LParen" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonRParen" android:text="@string/RParen" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonLBrack" android:text="@string/LBrack" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonRBrack" android:text="@string/RBrack" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonAdd" android:text="@string/Add" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonSub" android:text="@string/Sub" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonMul" android:text="@string/Mul" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonDiv" android:text="@string/Div" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonAns" android:text="@string/Ans" style="@style/ButtonFunc5"/>
+	</LinearLayout>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button01" android:text="@string/Num1" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button02" android:text="@string/Num2" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button03" android:text="@string/Num3" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button04" android:text="@string/Num4" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button05" android:text="@string/Num5" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button06" android:text="@string/Num6" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button07" android:text="@string/Num7" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button08" android:text="@string/Num8" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button09" android:text="@string/Num9" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/Button00" android:text="@string/Num0" style="@style/ButtonFunc1"/>
+	</LinearLayout>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonQ" android:text="@string/LetterQ" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonW" android:text="@string/LetterW" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonE" android:text="@string/LetterE" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonR" android:text="@string/LetterR" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonT" android:text="@string/LetterT" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonY" android:text="@string/LetterY" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonU" android:text="@string/LetterU" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonI" android:text="@string/LetterI" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonO" android:text="@string/LetterO" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonP" android:text="@string/LetterP" style="@style/ButtonFunc1"/>
+	</LinearLayout>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonA" android:text="@string/LetterA" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonS" android:text="@string/LetterS" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonD" android:text="@string/LetterD" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonF" android:text="@string/LetterF" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonG" android:text="@string/LetterG" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonH" android:text="@string/LetterH" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonJ" android:text="@string/LetterJ" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonK" android:text="@string/LetterK" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonL" android:text="@string/LetterL" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonAssign" android:text="@string/Assign" style="@style/ButtonFunc1"/>
+	</LinearLayout>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonZ" android:text="@string/LetterZ" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonX" android:text="@string/LetterX" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonC" android:text="@string/LetterC" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonV" android:text="@string/LetterV" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonB" android:text="@string/LetterB" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonN" android:text="@string/LetterN" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonM" android:text="@string/LetterM" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonComma" android:text="@string/Comma" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonPeriod" android:text="@string/Period" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonSemiColon" android:text="@string/SemiColon" style="@style/ButtonFunc1"/>
+	</LinearLayout>
+</LinearLayout>

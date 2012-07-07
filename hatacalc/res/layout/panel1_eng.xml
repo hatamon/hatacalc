@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/Panel"
+	>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonBack" android:text="@string/Back" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonKilo" android:text="@string/Kilo" style="@style/ButtonFunc4"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonMega" android:text="@string/Mega" style="@style/ButtonFunc4"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonGiga" android:text="@string/Giga" style="@style/ButtonFunc4"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonTera" android:text="@string/Tera" style="@style/ButtonFunc4"/>
+	</LinearLayout>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton style="@style/ButtonPadding"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonMilli" android:text="@string/Milli" style="@style/ButtonFunc5"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonMicro" android:text="@string/Micro" style="@style/ButtonFunc5"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonNano" android:text="@string/Nano" style="@style/ButtonFunc4"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonPico" android:text="@string/Pico" style="@style/ButtonFunc4"/>
+	</LinearLayout>
+</LinearLayout>

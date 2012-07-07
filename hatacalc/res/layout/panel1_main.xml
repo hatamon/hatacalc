@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/Panel"
+	>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonChangeIf" android:text="@string/ChangeIf" style="@style/ButtonFunc2"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonChangeLoop" android:text="@string/ChangeLoop" style="@style/ButtonFunc4"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonChangeMath1" android:text="@string/ChangeMath1" style="@style/ButtonFunc5"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonChangeMath2" android:text="@string/ChangeMath2" style="@style/ButtonFunc5"/>
+	</LinearLayout>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonChangeHex" android:text="@string/ChangeHex" style="@style/ButtonFunc2"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonChangeEng" android:text="@string/ChangeEng" style="@style/ButtonFunc4"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonChangeFunc" android:text="@string/ChangeFunc" style="@style/ButtonFunc4"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonChangeVar" android:text="@string/ChangeVar" style="@style/ButtonFunc3"/>
+	</LinearLayout>
+</LinearLayout>

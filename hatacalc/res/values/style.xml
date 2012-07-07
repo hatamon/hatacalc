@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<dimen name="btn_digit_text_size">30dp</dimen>
+<dimen name="btn_function_text_size">30dp</dimen>
+<dimen name="display_text_size">30sp</dimen>
+
+<style name="ButtonDefault">
+<item name="android:textStyle">bold</item>
+<item name="android:onClick">onClick</item>
+<item name="android:layout_width">fill_parent</item>
+<item name="android:layout_height">fill_parent</item>
+<item name="android:textSize">@dimen/btn_digit_text_size</item>
+<item name="android:gravity">center</item>
+<item name="android:layout_weight">1</item>
+</style>
+
+<style name="ButtonDegrad" parent="@style/ButtonDefault">
+<item name="android:textScaleX">0.60</item>
+<item name="android:background">@drawable/btn_degrad</item>
+</style>
+
+<style name="ButtonSinCosTan" parent="@style/ButtonDefault">
+<item name="android:textScaleX">0.65</item>
+<item name="android:background">@drawable/btn_sincostan</item>
+</style>
+
+<style name="ButtonAsinAcosAtan" parent="@style/ButtonDefault">
+<item name="android:textScaleX">0.60</item>
+<item name="android:background">@drawable/btn_sincostan</item>
+</style>
+
+<style name="ButtonClear" parent="@style/ButtonDefault">
+<item name="android:textScaleX">1.15</item>
+<item name="android:background">@drawable/btn_clear</item>
+</style>
+
+<style name="ButtonCalc" parent="@style/ButtonDefault">
+<item name="android:textScaleX">0.50</item>
+<item name="android:background">@drawable/btn_calc</item>
+</style>
+
+<style name="ButtonDigit" parent="@style/ButtonDefault">
+<item name="android:background">@drawable/btn_digit</item>
+</style>
+
+<style name="ButtonFunc" parent="@style/ButtonDefault">
+<item name="android:background">@drawable/btn_function</item>
+</style>
+
+<style name="ButtonPadding" parent="@style/ButtonFunc">
+<item name="android:textScaleX">1.15</item>
+<item name="android:layout_height">fill_parent</item>
+</style>
+
+<style name="ButtonFunc1" parent="@style/ButtonFunc">
+<item name="android:textScaleX">1.15</item>
+</style>
+
+<style name="ButtonFunc2" parent="@style/ButtonFunc">
+<item name="android:textScaleX">0.80</item>
+</style>
+
+<style name="ButtonFunc3" parent="@style/ButtonFunc">
+<item name="android:textScaleX">0.65</item>
+</style>
+
+<style name="ButtonFunc4" parent="@style/ButtonFunc">
+<item name="android:textScaleX">0.60</item>
+</style>
+
+<style name="ButtonFunc5" parent="@style/ButtonFunc">
+<item name="android:textScaleX">0.50</item>
+</style>
+
+<style name="ButtonFuncDef" parent="@style/ButtonFunc">
+<item name="android:textScaleX">0.5</item>
+<item name="android:layout_marginLeft">-1sp</item>
+<item name="android:layout_marginRight">-1sp</item>
+</style>
+
+<style name="EditText">
+<item name="android:textSize">@dimen/display_text_size</item>
+<item name="android:inputType">text</item>
+<item name="android:gravity">center_vertical</item>
+<item name="android:textColor">#ffffff</item>
+<item name="android:lines">1</item>
+<item name="android:maxLines">1</item>
+<item name="android:scrollbars">none</item>
+<item name="android:scrollHorizontally">true</item>
+<item name="android:layout_width">fill_parent</item>
+<item name="android:layout_height">wrap_content</item>
+<item name="android:paddingTop">8dp</item>
+<item name="android:paddingLeft">8dp</item>
+<item name="android:paddingRight">8dp</item>
+<item name="android:paddingBottom">0dp</item>
+</style>
+
+<style name="Row">
+<item name="android:layout_width">fill_parent</item>
+<item name="android:layout_height">0dp</item>
+<item name="android:layout_weight">1</item>
+<item name="android:orientation">horizontal</item>
+<item name="android:gravity">center_vertical</item>
+</style>
+
+<style name="Panel">
+<item name="android:layout_width">fill_parent</item>
+<item name="android:layout_height">fill_parent</item>
+<item name="android:orientation">vertical</item>
+<item name="android:gravity">center</item>
+</style>
+
+</resources>

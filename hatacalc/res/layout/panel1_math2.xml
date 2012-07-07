@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/Panel"
+	>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonBack" android:text="@string/Back" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonFactorial" android:text="@string/Factorial" style="@style/ButtonFunc2"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonCombination" android:text="@string/Combination" style="@style/ButtonFunc3"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonPermutation" android:text="@string/Permutation" style="@style/ButtonFunc3"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonMod" android:text="@string/Mod" style="@style/ButtonFunc3"/>
+	</LinearLayout>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton style="@style/ButtonPadding"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonSqrt" android:text="@string/Sqrt" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonPower" android:text="@string/Power" style="@style/ButtonFunc3"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonSum" android:text="@string/Sum" style="@style/ButtonFunc3"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonAve" android:text="@string/Ave" style="@style/ButtonFunc3"/>
+	</LinearLayout>
+</LinearLayout>

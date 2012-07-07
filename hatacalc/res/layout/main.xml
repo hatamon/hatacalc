@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <include layout="@layout/panel0_main" />
+
+    <jp.hatamonkensetsu.software.android.androidlib.PanelSwitcher
+        android:id="@+id/panelswitch1"
+		android:layout_width="fill_parent"
+		android:layout_height="0dip"
+		android:layout_weight="2"
+        >
+		<include android:id="@+id/panel1_main" layout="@layout/panel1_main" />
+		<include android:id="@+id/panel1_ifloop" layout="@layout/panel1_if" />
+		<include android:id="@+id/panel1_ifloop" layout="@layout/panel1_loop" />
+		<include android:id="@+id/panel1_math1" layout="@layout/panel1_math1" />
+		<include android:id="@+id/panel1_math2" layout="@layout/panel1_math2" />
+		<include android:id="@+id/panel1_bin" layout="@layout/panel1_bin" />
+		<include android:id="@+id/panel1_eng" layout="@layout/panel1_eng" />
+		<include android:id="@+id/panel1_func" layout="@layout/panel1_func" />
+		<include android:id="@+id/panel1_var" layout="@layout/panel1_var" />
+    </jp.hatamonkensetsu.software.android.androidlib.PanelSwitcher>
+
+    <jp.hatamonkensetsu.software.android.androidlib.PanelSwitcher
+        android:id="@+id/panelswitch2"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="5"
+        >
+		<include layout="@layout/panel2_main" />
+		<include layout="@layout/panel2_key" />
+    </jp.hatamonkensetsu.software.android.androidlib.PanelSwitcher>
+
+    <include layout="@layout/panel3_main" />
+
+</LinearLayout>

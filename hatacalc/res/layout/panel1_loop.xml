@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/Panel"
+	>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonBack" android:text="@string/Back" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonLoop" android:text="@string/Loop" style="@style/ButtonFunc4"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton style="@style/ButtonPadding"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton style="@style/ButtonPadding"/>
+	</LinearLayout>
+	<LinearLayout style="@style/Row">
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton style="@style/ButtonPadding"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonLBrack" android:text="@string/LBrack" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton android:id="@+id/ButtonRBrack" android:text="@string/RBrack" style="@style/ButtonFunc1"/>
+		<jp.hatamonkensetsu.software.android.androidlib.ColorButton style="@style/ButtonPadding"/>
+	</LinearLayout>
+</LinearLayout>
