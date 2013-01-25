@@ -705,10 +705,20 @@ public class Parser {
 				BigDecimal d1 = pop();
 				switch ( prevTag ) {
 					case	PERMUTATION:
-						push( factorial(d1).divide(factorial(d1.subtract(d2))) );
+						if(d1.subtract(d2).doubleValue() < 0.0) {
+							push(new BigDecimal("0"));
+						}
+						else {
+							push( factorial(d1).divide(factorial(d1.subtract(d2))) );
+						}
 						break;
 					case	COMBINATION:
-						push( factorial(d1).divide(factorial(d2).multiply(factorial(d1.subtract(d2)))) );
+						if(d1.subtract(d2).doubleValue() < 0.0) {
+							push(new BigDecimal("0"));
+						}
+						else {
+							push( factorial(d1).divide(factorial(d2).multiply(factorial(d1.subtract(d2)))) );
+						}
 						break;
 					default:
 						parseOK = false;
@@ -761,8 +771,14 @@ public class Parser {
 			BigDecimal d1 = pop();
 			switch ( m_Token.m_Tag ) {
 				case	FACTORIAL:
-					push( factorial(d1) );
-					m_Token = m_Lex.scan();
+					if(d1.doubleValue() < 0.0) {
+						m_ErrorMessage = new String("n! : Illegal value");
+						parseOK = false;
+					}
+					else {
+						push( factorial(d1) );
+						m_Token = m_Lex.scan();
+					}
 					break;
 				default:
 					parseOK = false;
