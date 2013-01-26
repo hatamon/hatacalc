@@ -7,11 +7,14 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.view.inputmethod.InputMethodManager;
@@ -29,7 +32,6 @@ import java.util.Iterator;
 import java.util.Set;
 
 import jp.hatamonkensetsu.software.android.calclib.Parser;
-import jp.hatamonkensetsu.software.android.androidlib.PanelSwitcher;
 
 import jp.hatamonkensetsu.software.android.Hatacalc.R;
 
@@ -53,8 +55,10 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 
 	private boolean m_IsAutoCalc = false;
 	
-    private PanelSwitcher mPanelSwitcher1;
-    private PanelSwitcher mPanelSwitcher2;
+    private MyPagerAdapter mPagerAdapter1;
+    private MyPagerAdapter mPagerAdapter2;
+    private ViewPager mViewPager1;
+    private ViewPager mViewPager2;
     private int m_CurrentPanelId1 = 0;
     private int m_CurrentPanelId2 = 0;
     
@@ -99,10 +103,26 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 		m_edtAnswer = (EditText)this.findViewById(R.id.EditTextAnswer);
         m_edtAnswer.setBackgroundDrawable(null);
 
-        mPanelSwitcher1= (PanelSwitcher) findViewById(R.id.panelswitch1);
-        mPanelSwitcher1.setCurrentIndex(savedInstanceState==null ? 0 : savedInstanceState.getInt(STATE_CURRENT_VIEW, 0));
-        mPanelSwitcher2= (PanelSwitcher) findViewById(R.id.panelswitch2);
-        mPanelSwitcher2.setCurrentIndex(savedInstanceState==null ? 0 : savedInstanceState.getInt(STATE_CURRENT_VIEW, 0));
+        mPagerAdapter1 = new MyPagerAdapter();
+        mPagerAdapter1.addResId(R.layout.panel1_main);
+        mPagerAdapter1.addResId(R.layout.panel1_if);
+        mPagerAdapter1.addResId(R.layout.panel1_loop);
+        mPagerAdapter1.addResId(R.layout.panel1_math1);
+        mPagerAdapter1.addResId(R.layout.panel1_math2);
+        mPagerAdapter1.addResId(R.layout.panel1_bin);
+        mPagerAdapter1.addResId(R.layout.panel1_eng);
+        mPagerAdapter1.addResId(R.layout.panel1_func);
+        mPagerAdapter1.addResId(R.layout.panel1_var);
+        mViewPager1 = (ViewPager) findViewById(R.id.viewPager1);
+        mViewPager1.setAdapter(mPagerAdapter1);
+        mViewPager1.setCurrentItem(savedInstanceState==null ? 0 : savedInstanceState.getInt(STATE_CURRENT_VIEW, 0));
+
+        mPagerAdapter2 = new MyPagerAdapter();
+        mPagerAdapter2.addResId(R.layout.panel2_main);
+        mPagerAdapter2.addResId(R.layout.panel2_key);
+        mViewPager2 = (ViewPager) findViewById(R.id.viewPager2);
+        mViewPager2.setAdapter(mPagerAdapter2);
+        mViewPager2.setCurrentItem(savedInstanceState==null ? 0 : savedInstanceState.getInt(STATE_CURRENT_VIEW, 0));
 
 		{
 			FuncInfo info = new FuncInfo();
@@ -140,7 +160,6 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 		m_Parser.setKigoChange("\u221a", "sqrt");
 
         ((Button)findViewById(R.id.ButtonChange)).setText(R.string.Dec);
-        ((Button)findViewById(R.id.ButtonDegRad)).setText(R.string.Deg);
         ((Button)findViewById(R.id.ButtonCalc)).setOnLongClickListener(this);
         ((Button)findViewById(R.id.ButtonClear)).setOnLongClickListener(this);
         ((Button)findViewById(R.id.ButtonLeft)).setOnLongClickListener(this);
@@ -149,7 +168,7 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
         ((Button)findViewById(R.id.ButtonLeft)).setOnTouchListener(this);
         ((Button)findViewById(R.id.ButtonRight)).setOnTouchListener(this);
         ((Button)findViewById(R.id.ButtonBS)).setOnTouchListener(this);
-        
+
         loadPref();
         restoreSetting();
 	}
@@ -303,15 +322,15 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
         case R.id.ButtonFunc1: insertText(getString(R.string.Func1Ins)); break;
         case R.id.ButtonFunc2: insertText(getString(R.string.Func2Ins)); break;
         case R.id.ButtonFunc3: insertText(getString(R.string.Func3Ins)); break;
-        case R.id.ButtonBack: mPanelSwitcher1.setCurrentIndex(0); break;
-        case R.id.ButtonChangeIf: mPanelSwitcher1.setCurrentIndex(1); break;
-        case R.id.ButtonChangeLoop: mPanelSwitcher1.setCurrentIndex(2); break;
-        case R.id.ButtonChangeMath1: mPanelSwitcher1.setCurrentIndex(3); break;
-        case R.id.ButtonChangeMath2: mPanelSwitcher1.setCurrentIndex(4); break;
-        case R.id.ButtonChangeHex: mPanelSwitcher1.setCurrentIndex(5); break;
-        case R.id.ButtonChangeEng: mPanelSwitcher1.setCurrentIndex(6); break;
-        case R.id.ButtonChangeFunc: mPanelSwitcher1.setCurrentIndex(7); break;
-        case R.id.ButtonChangeVar: mPanelSwitcher1.setCurrentIndex(8); break;
+        case R.id.ButtonBack: mViewPager1.setCurrentItem(0); break;
+        case R.id.ButtonChangeIf: mViewPager1.setCurrentItem(1); break;
+        case R.id.ButtonChangeLoop: mViewPager1.setCurrentItem(2); break;
+        case R.id.ButtonChangeMath1: mViewPager1.setCurrentItem(3); break;
+        case R.id.ButtonChangeMath2: mViewPager1.setCurrentItem(4); break;
+        case R.id.ButtonChangeHex: mViewPager1.setCurrentItem(5); break;
+        case R.id.ButtonChangeEng: mViewPager1.setCurrentItem(6); break;
+        case R.id.ButtonChangeFunc: mViewPager1.setCurrentItem(7); break;
+        case R.id.ButtonChangeVar: mViewPager1.setCurrentItem(8); break;
         case R.id.ButtonVarListBtn: startVarListActivity();; break;
         case R.id.ButtonFuncListBtn: startFuncListActivity();; break;
         default:
@@ -668,9 +687,9 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 		e.putBoolean("IsAutoCalc", m_IsAutoCalc);
 		e.putInt("DegRadType", m_degradType);
 
-		m_CurrentPanelId1 = mPanelSwitcher1.getCurrentIndex();
+		m_CurrentPanelId1 = mViewPager1.getCurrentItem();
 		e.putInt("Panel1Id", m_CurrentPanelId1);
-		m_CurrentPanelId2 = mPanelSwitcher2.getCurrentIndex();
+		m_CurrentPanelId2 = mViewPager2.getCurrentItem();
 		e.putInt("Panel2Id", m_CurrentPanelId2);
 		
 		HashMap<String, BigDecimal> ids = m_Parser.getIdValuesList();
@@ -700,9 +719,8 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 		moveCursorTo(m_ExpressionCurPos);
 		changeResultTypeTo(m_ResultType);
 		changeAutoCalcTo(m_IsAutoCalc);
-		changeDegRadTo(m_degradType);
-		mPanelSwitcher1.setCurrentIndex(m_CurrentPanelId1);
-		mPanelSwitcher2.setCurrentIndex(m_CurrentPanelId2);
+		mViewPager1.setCurrentItem(m_CurrentPanelId1);
+		mViewPager1.setCurrentItem(m_CurrentPanelId2);
 		for(int i = 0; i < m_Ids.size(); i++) {
 			m_Parser.parse(m_Ids.get(i));
 		}
@@ -710,5 +728,43 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 			m_Parser.parse("def " + m_UserFuncs.get(i).getFuncName() + m_UserFuncs.get(i).getFuncArgs() + "=" + m_UserFuncs.get(i).getFuncExpression());
 		}
 		calc();
+	}
+	
+	private class MyPagerAdapter extends PagerAdapter {
+		private ArrayList<Integer> mResIds = new ArrayList<Integer>();
+
+		public void addResId(int id) {
+			mResIds.add(id);
+		}
+		
+		@Override
+		public int getCount() {
+			return mResIds.size();
+		}
+
+		@Override
+		public Object instantiateItem(ViewGroup container, int position) {
+			int resid = mResIds.get(position);
+			View view = getLayoutInflater().inflate(resid, null);
+			container.addView(view);
+
+			// 生成したView内のViewにアクセスする場合は、以下で操作します
+			switch(resid) {
+			case	R.layout.panel1_math1:
+				changeDegRadTo(m_degradType);
+				break;
+			}
+			return view;
+		}
+		
+		@Override
+		public void destroyItem(ViewGroup container, int position, Object object) {
+			container.removeView((View) object);
+		}
+
+		@Override
+		public boolean isViewFromObject(View view, Object object) {
+			return view == (View)object;
+		}
 	}
 }
