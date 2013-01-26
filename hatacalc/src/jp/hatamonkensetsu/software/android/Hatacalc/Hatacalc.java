@@ -1,7 +1,7 @@
 package jp.hatamonkensetsu.software.android.Hatacalc;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -9,15 +9,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.WindowManager.LayoutParams;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import jp.hatamonkensetsu.software.android.calclib.FuncInfo;
@@ -25,11 +22,10 @@ import jp.hatamonkensetsu.software.android.calclib.IUserFunc;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Set;
+import java.util.Locale;
 
 import jp.hatamonkensetsu.software.android.calclib.Parser;
 
@@ -375,7 +371,7 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 	public Result exec(String i_FuncName, ArrayList<String> i_ArgNames, ArrayList<Param> i_Params, String i_ExecExpression) {
 		final Result result = new Result();
 		result.value = new BigDecimal("0.0");
-		String funcName = i_FuncName.toLowerCase();
+		String funcName = i_FuncName.toLowerCase(Locale.getDefault());
 		Boolean isVariableArgSize = false;
 
 		if(i_FuncName.compareToIgnoreCase("sum") == 0) isVariableArgSize = true;
@@ -546,10 +542,10 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 			BigDecimal roundVal = m_Parser.getResult().round(new MathContext(20));
 			switch(m_ResultType) {
 			case	decResult:
-				result = m_Parser.getDisplayValueStringWithSeparator(roundVal);
+				result = Parser.getDisplayValueStringWithSeparator(roundVal);
 				break;
 			case	hexResult:
-				result = "0x" + divide(Long.toHexString(roundVal.longValue()).toUpperCase(),4);
+				result = "0x" + divide(Long.toHexString(roundVal.longValue()).toUpperCase(Locale.getDefault()),4);
 				break;
 			case	binResult:
 				result = "0b" + divide(Long.toBinaryString(roundVal.longValue()), 4);
@@ -637,6 +633,7 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
     	}
 	}
 	
+	@SuppressLint("WorldReadableFiles")
 	private void loadPref() {
 		SharedPreferences pref = getSharedPreferences("hatacalc.pref", MODE_WORLD_READABLE);
 		m_ExpressionStr = pref.getString("LastExpression", "");
@@ -676,6 +673,7 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 		}
 	}
 	
+	@SuppressLint("WorldReadableFiles")
 	private void savePref() {
 		SharedPreferences pref = getSharedPreferences("hatacalc.pref", MODE_WORLD_READABLE);
 		Editor e = pref.edit();
@@ -696,7 +694,7 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 		m_Ids = new ArrayList<String>();
 		for(Iterator<String> it = ids.keySet().iterator(); it.hasNext(); ) {
 			String id = it.next();
-			String val = id + "=" + m_Parser.getDisplayValueString(ids.get(id));
+			String val = id + "=" + Parser.getDisplayValueString(ids.get(id));
 			m_Ids.add(val);
 		}
 		e.putInt("IdCount", m_Ids.size());
@@ -704,7 +702,6 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 			e.putString("Id"+i, m_Ids.get(i));
 		}
 
-		HashMap<String, FuncInfo> funcs = m_Parser.getUserFuncList();
 		m_UserFuncs = m_Parser.getUserFuncInfoList();
 		e.putInt("UserFuncCount", m_UserFuncs.size());
 		for(int i = 0; i < m_UserFuncs.size(); i++) {

@@ -5,12 +5,9 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.math.BigDecimal;
-import java.math.MathContext;
 
 import jp.hatamonkensetsu.software.android.Hatacalc.FuncListInfo;
 import jp.hatamonkensetsu.software.android.Hatacalc.VarListInfo;
-import jp.hatamonkensetsu.software.android.calclib.IUserFunc.Param;
-import jp.hatamonkensetsu.software.android.calclib.IUserFunc.Result;
 
 public class Parser {
 	public class UserDefFuncExecutor implements IUserFunc {

@@ -6,7 +6,6 @@ import java.math.BigInteger;
 
 public class Lex {
 	private char m_Peek = ' ';
-	private int m_LineNum;
 	private static HashMap<String, WordToken> m_Words = new HashMap<String, WordToken>();
 	private int m_CharClassTable[] = new int[256];
 	private static final int OTHER = 0;
@@ -49,7 +48,6 @@ public class Lex {
 	public void init(Stream i_Stream) {
 		m_Peek = ' ';
 		m_Stream = i_Stream;
-		m_LineNum = 0;
 		m_CurToken = null;
 		m_NextToken = null;
 	}
@@ -76,7 +74,6 @@ public class Lex {
 	private Token lowscan() {
 		while( isSpace(m_Peek) || isCr(m_Peek) ) {
 			if ( isCr(m_Peek) ) {
-				m_LineNum += 1;
 			}
 
 			m_Peek = m_Stream.read();
@@ -347,10 +344,6 @@ public class Lex {
 		m_CharClassTable['\n'] = CR;
 	}
 
-	private boolean isOther(char ch) {
-		if(ch >= 256)	return false;
-		else			return m_CharClassTable[ch] == OTHER;
-	}
 	private boolean isLetter(char ch) {
 		if(ch >= 256) {
 			return true;

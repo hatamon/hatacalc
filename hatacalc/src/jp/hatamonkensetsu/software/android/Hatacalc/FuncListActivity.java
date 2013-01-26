@@ -1,9 +1,6 @@
 package jp.hatamonkensetsu.software.android.Hatacalc;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 import android.app.AlertDialog;
@@ -11,23 +8,16 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnLongClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemLongClickListener;
 import jp.hatamonkensetsu.software.android.Hatacalc.R;
-import jp.hatamonkensetsu.software.android.calclib.FuncInfo;
 import jp.hatamonkensetsu.software.android.calclib.Parser;
 
 public class FuncListActivity extends ListActivity implements AdapterView.OnItemLongClickListener {

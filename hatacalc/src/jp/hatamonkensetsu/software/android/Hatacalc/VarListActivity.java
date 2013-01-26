@@ -6,7 +6,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.hatamonkensetsu.software.android.Hatacalc.VarListActivity.VarListAdapter;
 import jp.hatamonkensetsu.software.android.calclib.Parser;
 import android.app.AlertDialog;
 import android.app.ListActivity;

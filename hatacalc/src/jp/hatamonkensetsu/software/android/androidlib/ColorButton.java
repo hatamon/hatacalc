@@ -23,8 +23,6 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.util.AttributeSet;
 import android.widget.Button;
-import android.view.View.OnClickListener;
-import android.view.View;
 import android.view.MotionEvent;
 import android.content.res.Resources;
 
