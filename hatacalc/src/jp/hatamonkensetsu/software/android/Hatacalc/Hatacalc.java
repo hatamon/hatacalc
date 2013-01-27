@@ -745,7 +745,7 @@ public class Hatacalc extends Activity implements IUserFunc, View.OnLongClickLis
 			View view = getLayoutInflater().inflate(resid, null);
 			container.addView(view);
 
-			// ¶¬‚µ‚½View“à‚ÌView‚ÉƒAƒNƒZƒX‚·‚éê‡‚ÍAˆÈ‰º‚Å‘€ì‚µ‚Ü‚·
+			// ç”Ÿæˆã—ãŸViewå†…ã®Viewã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹å ´åˆã¯ã€ä»¥ä¸‹ã§æ“ä½œã—ã¾ã™
 			switch(resid) {
 			case	R.layout.panel1_math1:
 				changeDegRadTo(m_degradType);

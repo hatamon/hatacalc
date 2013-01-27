@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.view.View;
 
 public class HatacalcView extends View {
-	// コンストラクタ
+	// 繧ｳ繝ｳ繧ｹ繝医Λ繧ｯ繧ｿ
 	public HatacalcView(Context context) {
 		super(context);
 		setBackgroundColor(Color.WHITE);
